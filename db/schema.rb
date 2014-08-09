@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140809224227) do
+ActiveRecord::Schema.define(version: 20140809232118) do
 
   create_table "shoots", force: true do |t|
     t.string   "artist"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140809224227) do
     t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_published"
   end
 
 end
