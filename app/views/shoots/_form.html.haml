@@ -2,7 +2,7 @@
   - if @shoot.errors.any?
     .error
       = pluralize(@shoot.errors.count, "error")
-        prohibited this article from being saved:
+      prohibited this article from being saved:
     %ul
       - @shoot.errors.full_messages.each do |msg|
         %li
