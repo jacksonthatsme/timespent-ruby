@@ -1,4 +1,5 @@
 = image_tag @shoot.shoot_image_url.to_s
+= image_tag @shoot.shoot_image_url(:thumb).to_s
 %h1
   = @shoot.artist
 
