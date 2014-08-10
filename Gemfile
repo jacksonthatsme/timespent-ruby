@@ -14,6 +14,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
+# Use Video JS gem for video
+gem 'videojs_rails'
+
 # Use HAML for markup language
 gem 'haml', '~> 4.0.5'
 gem "haml-rails"
