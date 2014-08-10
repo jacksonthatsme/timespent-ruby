@@ -29,6 +29,9 @@ gem 'carrierwave', "~> 0.10.0"
 gem 'mini_magick', "~> 3.7.0"
 gem 'rmagick', '2.13.2'
 
+# Use Voyeur for video conversions
+gem 'voyeur'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
