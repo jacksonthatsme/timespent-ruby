@@ -41,6 +41,6 @@ class ShootsController < ApplicationController
   end
   private
     def shoot_params
-      params.require(:shoot).permit(:artist, :description, :location)
+      params.require(:shoot).permit(:artist, :description, :location, :shoot_image)
     end
 end

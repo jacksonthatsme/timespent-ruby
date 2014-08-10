@@ -18,6 +18,11 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'haml', '~> 4.0.5'
 gem "haml-rails"
 
+# Use carrierwave, mini magick and rmagick for image and video uploads
+gem 'carrierwave', "~> 0.10.0"
+gem 'mini_magick', "~> 3.7.0"
+gem 'rmagick', '2.13.2'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
