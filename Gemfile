@@ -32,6 +32,10 @@ gem 'rmagick', '2.13.2'
 # Use Voyeur for video conversions
 gem 'voyeur'
 
+# Use sidekiq and carrierwave_backgrounder for background jobs
+gem 'sidekiq'
+gem 'carrierwave_backgrounder'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
