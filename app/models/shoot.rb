@@ -5,4 +5,5 @@ class Shoot < ActiveRecord::Base
   validates :location, presence: true
 
   mount_uploader :shoot_image, ShootImageUploader
+  mount_uploader :video, VideoUploader
 end
