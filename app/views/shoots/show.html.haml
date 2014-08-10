@@ -6,3 +6,7 @@
 
 %h5
   = @shoot.location
+
+= link_to 'edit', edit_shoot_path(@shoot)
+= link_to 'delete', shoot_path(@shoot),
+                    method: :delete
