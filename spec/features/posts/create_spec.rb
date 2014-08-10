@@ -3,19 +3,35 @@ require 'spec_helper'
 
 describe 'Adding posts'  do
 
- def create_shoot(options={})
+ def create_post(options={})
     options[:title] ||= "Post Title"
-    options[:content] ||= ""
+    options[:content] ||= "Post Content"
 
-    visit '/shoots'
-    click_link 'Add new shoot'
-    expect(page).to have_content("New Shoot")
+    visit '/posts'
+    click_link 'New blog post'
+    expect(page).to have_content("New post")
 
-    fill_in "shoot[artist]", with: options[:artist]
-    fill_in "shoot[description]", with: options[:description]
-    fill_in "shoot[location]", with: options[:location]
+    fill_in "post[title]", with: options[:title]
+    fill_in "post[content]", with: options[:content]
 
-    click_button "Create Shoot"
+    click_button "Create Post"
   end
 
+  it 'redirects to show page on success' do
+    create_post
+
+    expect(page).to have_content("Post Title")
+  end
+
+  it 'displays an error when shoot has no title' do
+    create_post title: ""
+
+    expect(page).to have_content("error")
+  end
+
+  it 'displays an error when shoot has no content' do
+    create_post content: ""
+
+    expect(page).to have_content("error")
+  end
 end

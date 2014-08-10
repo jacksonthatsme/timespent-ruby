@@ -26,19 +26,19 @@ describe 'Adding shoots'  do
   end
 
   it 'displays an error when shoot has no artist' do
-    create_shoot artist: " "
+    create_shoot artist: ""
 
     expect(page).to have_content("error")
   end
 
   it 'displays an error when shoot has no description' do
-    create_shoot description: " "
+    create_shoot description: ""
 
     expect(page).to have_content("error")
   end
 
   it 'displays an error when shoot has no location' do
-    create_shoot location: " "
+    create_shoot location: ""
 
     expect(page).to have_content("error")
   end
