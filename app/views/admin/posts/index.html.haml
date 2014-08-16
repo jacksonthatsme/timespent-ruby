@@ -1,0 +1,12 @@
+%h1
+  Blog
+
+= link_to 'New blog post', new_admin_post_path
+
+- @posts.each do |post|
+  %h2{:id => dom_id(post)}
+    = post.title
+
+    = link_to 'edit', edit_admin_post_path(post)
+    = link_to 'show', post_path(post)
+
