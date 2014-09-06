@@ -2,7 +2,8 @@
   Blog
 
 - @posts.each do |post|
-  %h2{:id => dom_id(post)}
-    = post.title
+  = link_to post do
+    %h2{:id => dom_id(post)}
+      = post.title
 
 
