@@ -34,6 +34,9 @@ class ShootImageUploader < CarrierWave::Uploader::Base
   # Create different versions of your uploaded files:
   version :thumb do
     process :resize_to_fill => [500, 500, gravity = 'Center']
+  end
+
+  version :bg do
     process :convert_to_grayscale
   end
 

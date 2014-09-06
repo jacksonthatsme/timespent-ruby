@@ -1,0 +1,14 @@
+%h1
+  Shoots index
+
+- @shoots.each do |shoot|
+  .shoot{:id => dom_id(shoot)}
+    %h3
+      = shoot.artist
+    %p
+      = shoot.description
+    %h5
+      = shoot.location
+    = link_to 'edit', edit_admin_shoot_path(shoot)
+    = link_to 'show', shoot_path(shoot)
+= link_to 'Add new shoot', new_admin_shoot_path

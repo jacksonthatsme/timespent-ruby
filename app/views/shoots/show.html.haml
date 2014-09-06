@@ -1,3 +1,11 @@
+- content_for :admin_tools do
+  - if @shoot.is_published
+    This video is saved as a draft
+    = link_to 'Publish', publish_admin_shoot_path(@shoot), method: :patch
+  - else 
+    This video is published
+  = link_to 'edit', edit_admin_shoot_path(@shoot)
+
 = image_tag @shoot.shoot_image_url.to_s
 = image_tag @shoot.shoot_image_url(:thumb).to_s
 %h1
@@ -10,7 +18,3 @@
   = @shoot.location
 
 = videojs_rails sources: { mp4: @shoot.video.url, webm: @shoot.video.webm.url, setup: "{}", controls: false }, width:"400"
-
-= link_to 'edit', edit_shoot_path(@shoot)
-= link_to 'delete', shoot_path(@shoot),
-                    method: :delete

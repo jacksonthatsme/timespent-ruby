@@ -1,0 +1,13 @@
+%h1 Listing Admins
+
+- @users.each do |user|
+  %p= user.first_name
+  %p= user.last_name
+  %p= user.email
+  %p= user.password
+  %p= link_to 'Edit', edit_admin_user_path(user)
+  %p= link_to 'Destroy', admin_users_path, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New User', new_admin_user_path
