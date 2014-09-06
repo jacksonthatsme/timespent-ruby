@@ -1,4 +1,7 @@
 class Admin::ShootsController < ApplicationController
+  
+  before_action :require_user
+  
   def index
     @shoots = Shoot.all
   end
@@ -39,6 +42,13 @@ class Admin::ShootsController < ApplicationController
 
     redirect_to shoots_path
   end
+
+  def publish
+    @shoot = Shoot.find(params[:id])
+    @shoot.update_attribute(:is_published, true)
+    @shoot.reload
+  end
+
   private
     def shoot_params
       params.require(:shoot).permit(:artist, :description, :location, :shoot_image, :video)
