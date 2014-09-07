@@ -47,7 +47,8 @@ class Admin::ShootsController < ApplicationController
   def publish
     @shoot = Shoot.find(params[:id])
     @shoot.update_attribute(:is_published, true)
-    @shoot.reload
+    
+    redirect_to admin_shoots_path
   end
 
   private
