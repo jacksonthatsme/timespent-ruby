@@ -1,0 +1,23 @@
+!!!
+%html
+%head
+  %title
+    Timespent
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags
+%body
+  #admin-bar
+    D A S H B O A R D
+    You are logged in as
+    = current_user.first_name
+
+    %ul
+      %li
+        = link_to "Manage Blog Posts", admin_posts_path 
+      %li
+        = link_to "Manage Videos", admin_shoots_path 
+
+  #admin-tools
+    = yield :admin_tools
+  = yield 

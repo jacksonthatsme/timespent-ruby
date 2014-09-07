@@ -7,6 +7,7 @@ class Admin::ShootsController < ApplicationController
   end
   def new
     @shoot = Shoot.new
+    @shoot.is_published ||= false
   end
   def create
     @shoot = Shoot.new(shoot_params)
@@ -40,7 +41,7 @@ class Admin::ShootsController < ApplicationController
     @shoot = Shoot.find(params[:id])
     @shoot.destroy
 
-    redirect_to shoots_path
+    redirect_to admin_shoots_path
   end
 
   def publish
@@ -51,6 +52,6 @@ class Admin::ShootsController < ApplicationController
 
   private
     def shoot_params
-      params.require(:shoot).permit(:artist, :description, :location, :shoot_image, :video)
+      params.require(:shoot).permit(:artist, :description, :location, :shoot_image, :video, :is_published)
     end
 end

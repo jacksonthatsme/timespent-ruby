@@ -11,4 +11,5 @@
       = shoot.location
     = link_to 'edit', edit_admin_shoot_path(shoot)
     = link_to 'show', shoot_path(shoot)
+    = link_to 'Destroy', admin_shoot_path(shoot), method: :delete
 = link_to 'Add new shoot', new_admin_shoot_path
