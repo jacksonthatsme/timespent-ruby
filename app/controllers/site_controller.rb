@@ -1,5 +1,5 @@
 class SiteController < ApplicationController
   def index
-    @videos = Shoot.all
+    @videos = Shoot.published
   end
 end
