@@ -1,3 +1,12 @@
+- content_for :admin_tools do
+  - if @post.is_published
+    This post is published
+  - else 
+    This post is saved as a draft
+    = link_to 'Publish', publish_admin_post_path(@post), method: :patch
+  = link_to 'edit', edit_admin_post_path(@post)
+  = link_to 'delete', admin_post_path(@post), method: :delete
+
 %h1
   = @post.title
 

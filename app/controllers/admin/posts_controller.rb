@@ -42,6 +42,14 @@ class Admin::PostsController < ApplicationController
 
     redirect_to posts_path
   end
+
+  def publish
+    @post = Post.find(params[:id])
+    @post.update_attribute(:is_published, true)
+    
+    redirect_to admin_posts_path
+  end
+
   private
     def post_params
       params.require(:post).permit(:title, :content)
