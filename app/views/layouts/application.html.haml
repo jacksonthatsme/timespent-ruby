@@ -21,7 +21,11 @@
 
   #admin-tools
     = yield :admin_tools
-  
+
+  - flash.each do |key, value| 
+    == .alert.#{key}
+      = value
+
   %h1 Timespent
 
   = link_to 'Videos', shoots_path

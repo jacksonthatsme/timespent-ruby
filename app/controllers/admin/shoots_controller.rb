@@ -32,6 +32,7 @@ class Admin::ShootsController < ApplicationController
 
     if @shoot.update(shoot_params)
       redirect_to @shoot
+      flash[:success] = "Saved!"
     else
       render 'edit'
     end
