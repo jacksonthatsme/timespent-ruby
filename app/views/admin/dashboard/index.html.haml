@@ -2,7 +2,9 @@
 
 %h3
   = link_to "Blog Posts", admin_posts_path 
+  = @posts.count
 %h3
-  = link_to "Videos", admin_shoots_path 
+  = link_to "Videos", admin_shoots_path
+  = @shoots.count
 %h6
   = link_to "Manage Admins", admin_users_path

@@ -5,7 +5,7 @@
     This video is saved as a draft
     = link_to 'Publish', publish_admin_shoot_path(@shoot), method: :patch
   = link_to 'edit', edit_admin_shoot_path(@shoot)
-  = link_to 'delete', @shoot, method: :delete
+  = link_to 'delete', admin_shoot_path(@shoot), method: :delete
 
 = image_tag @shoot.shoot_image_url(:bg).to_s
 = image_tag @shoot.shoot_image_url(:thumb).to_s
