@@ -8,7 +8,8 @@
   = csrf_meta_tags
 %body
   #admin-bar
-    D A S H B O A R D
+    = link_to admin_path do
+      D A S H B O A R D
     You are logged in as
     = current_user.first_name
 
