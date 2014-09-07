@@ -6,7 +6,7 @@ class UserSessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to admin_url, notice: "Logged in!"
+      redirect_to admin_url, notice: "You are logged in!"
     else
       render action: 'new'
     end

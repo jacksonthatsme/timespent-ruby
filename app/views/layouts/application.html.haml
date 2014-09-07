@@ -23,10 +23,9 @@
     = yield :admin_tools
 
   - flash.each do |key, value| 
-    == .alert.#{key}
-      = value
-
-  %h1 Timespent
+    = content_tag(:div, value, class: "flash flash-#{key}")
+  = link_to root_url do
+    %h1 Timespent
 
   = link_to 'Videos', shoots_path
   = link_to 'Blog', posts_path
