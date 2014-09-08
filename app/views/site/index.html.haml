@@ -1,4 +1,6 @@
+%div
+  %video{id: "video_frame", class: "video-js vjs-default-skin vjs-big-play-centered"}
 - @videos.each do |video|
-  %h3
+  .thumbnail.grid-element.video-thumbnail{'data-src-mp4' => video.video.url, 'data-src-webm' => video.video.webm.url}
     = video.artist
     = image_tag video.shoot_image_url(:thumb).to_s
