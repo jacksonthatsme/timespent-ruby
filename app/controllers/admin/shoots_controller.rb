@@ -21,6 +21,10 @@ class Admin::ShootsController < ApplicationController
 
   def show
     @shoot = Shoot.find(params[:id])
+    respond_to do |format|
+     format.html #responds with default html file
+     format.js #this will be the javascript file we respond with
+    end
   end
 
   def edit

@@ -1,4 +1,7 @@
+#display
+
 - @videos.each do |video|
-  %h3
-    = video.artist
-    = image_tag video.shoot_image_url(:thumb).to_s
+  = link_to video, remote: true do
+    %h3
+      = video.artist
+      = image_tag video.shoot_image_url(:thumb).to_s
