@@ -8,16 +8,17 @@
   = csrf_meta_tags
 %body
   #admin-bar
-    = link_to admin_path do
-      D A S H B O A R D
-    You are logged in as
-    = current_user.first_name
+    - if current_user
+      = link_to admin_path do
+        D A S H B O A R D
+      You are logged in as
+      = current_user.first_name
 
-    %ul
-      %li
-        = link_to "Manage Blog Posts", admin_posts_path 
-      %li
-        = link_to "Manage Videos", admin_shoots_path 
+      %ul
+        %li
+          = link_to "Manage Blog Posts", admin_posts_path 
+        %li
+          = link_to "Manage Videos", admin_shoots_path 
 
   #admin-tools
     = yield :admin_tools

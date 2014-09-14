@@ -1,5 +1,5 @@
 #display
-
+  = render partial: "/shoots/display", locals: {video: @shoot}
 - @videos.each do |video|
   = link_to video, remote: true do
     %h3

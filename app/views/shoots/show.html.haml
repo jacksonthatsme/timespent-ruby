@@ -1,19 +1,19 @@
 - content_for :admin_tools do
-  - if @shoot.published?
-    This video is published
-  - else 
-    This video is saved as a draft
-    = link_to 'Publish', publish_admin_shoot_path(@shoot), method: :patch
+  - unless @shoot.video_processing
+    - if @shoot.published?
+      This video is published
+    - else 
+      This video is saved as a draft
+      = link_to 'Publish', publish_admin_shoot_path(@shoot), method: :patch
   = link_to 'edit', edit_admin_shoot_path(@shoot)
   = link_to 'delete', admin_shoot_path(@shoot), method: :delete
 
 #display
-  = render partial: "display", locals: { video: @shoot }
+  = render partial: "display", locals: {video: @shoot}
 - @shoots.each do |video|
   = link_to video, remote: true do
     %h3
       = video.artist
-      = image_tag video.shoot_image_url(:thumb).to_s
 / = image_tag @shoot.shoot_image_url(:bg).to_s
 / = image_tag @shoot.shoot_image_url(:thumb).to_s
 / %h1
