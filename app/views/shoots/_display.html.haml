@@ -1,3 +1,4 @@
-%h1
+#video-player{data: {'video-id' => video.id}}
   = videojs_rails sources: { mp4: video.video.url, webm: video.video.webm.url, setup: "{}", controls: false }, width:"400"
+%h1
   = video.artist
