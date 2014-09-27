@@ -6,7 +6,7 @@ class Shoot < ActiveRecord::Base
 
   mount_uploader :shoot_image, ShootImageUploader
   mount_uploader :video, VideoUploader
-  process_in_background :video
+  #process_in_background :video
 
   scope :published, -> { where(is_published: true) }
 
