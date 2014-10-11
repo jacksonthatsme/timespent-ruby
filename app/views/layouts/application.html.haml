@@ -7,8 +7,8 @@
   = javascript_include_tag 'application', 'data-turbolinks-track' => true
   = csrf_meta_tags
 %body
-  #admin-bar
-    - if current_user
+  - if current_user
+    #admin-bar
       = link_to admin_path do
         D A S H B O A R D
       You are logged in as
@@ -20,8 +20,8 @@
         %li
           = link_to "Manage Videos", admin_shoots_path 
 
-  #admin-tools
-    = yield :admin_tools
+    #admin-tools
+      = yield :admin_tools
 
   - flash.each do |key, value| 
     = content_tag(:div, value, class: "flash flash-#{key}")

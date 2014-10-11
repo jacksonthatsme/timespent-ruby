@@ -1,5 +1,5 @@
 function displayVideo() {
-  $('#display').html('<%= escape_javascript(render :partial => 'display', locals: { video: @shoot } ) %>')
+  $('#display').html('<%= j (render :partial => 'display', locals: { video: @shoot } ) %>')
 }
 
 displayVideo();

@@ -1,9 +1,13 @@
 #display
   = render partial: "/shoots/display", locals: {video: @shoot}
-%ul.grid
+.video-navigation
+  #video-next
+    NEXT
+  #video-prev
+    PREV
+.grid
   - @videos.each do |video|
-    %li.video-thumbnail{data: {'video-thumb-id' => video.id}}
-      = link_to video, remote: true do
-        %h3
-          = video.artist
-          = image_tag video.shoot_image_url(:thumb).to_s
+    = link_to video, remote: true, class: "video-thumbnail", data: {'video-thumb-id' => video.id} do
+      %h3
+        = video.artist
+        = image_tag video.shoot_image_url(:thumb).to_s

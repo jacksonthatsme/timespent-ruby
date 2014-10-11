@@ -7,8 +7,7 @@ class ShootsController < ApplicationController
     @shoot = Shoot.find(params[:id])
     @shoots = Shoot.all
     respond_to do |format|
-     format.html #responds with default html file
-     format.js #this will be the javascript file we respond with
+     format.js
     end
   end
 end
