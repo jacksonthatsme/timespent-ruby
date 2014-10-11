@@ -2,3 +2,7 @@
   = videojs_rails sources: { mp4: video.video.url, webm: video.video.webm.url, setup: "{}", controls: true }, width:"400", height:"300", id: "video"
 %h1
   = video.artist
+%p
+  %b
+    = video.location
+  = video.description

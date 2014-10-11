@@ -18,7 +18,7 @@ $('document').ready(function(){
     goToVideo(nextVideo);
   });
   $('#video-prev').click(function(){
-    goToPrevVideo();
+    goToVideo(prevVideo);
   });
 });
 
